@@ -22,8 +22,13 @@ export class TodoService {
   }
   //toggle completed
   toggleCompleted(todo:Todo):Observable<any>{
-    const url='${this.jsonPlaceholderUrl}/${todo.id}';
+    const url=`${this.jsonPlaceholderUrl}/${todo.id}`;
     return this.http.put(url,todo,httpOptions);
 
+  }
+   // Delete Todo
+   deleteTodo(todo:Todo):Observable<Todo> {
+    const url = `${this.jsonPlaceholderUrl}/${todo.id}`;
+    return this.http.delete<Todo>(url, httpOptions);
   }
 }

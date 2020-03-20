@@ -20,9 +20,9 @@ export class TodoItemComponent implements OnInit {
     //server
     this.todoService.toggleCompleted(todo).subscribe(todo=> console.log(todo));
   }
-  onDelete(todo:Todo):void{
-    console.log("delete "+todo);
-    this.deleteTodo.emit(todo);
+  onDelete(todo:Todo){
+      this.deleteTodo.emit(todo);
+      console.log("trying to delete " +todo);
     
   }
   //set dynamic classes
